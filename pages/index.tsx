@@ -23,12 +23,7 @@ const HomePage = () => {
         <Header textAlign="center" size="huge" as="h1">
           StoreAvo!
         </Header>
-
         <ListOfProducts allproducts={avos} />
-
-        {avos.map((avo) => (
-          <p>{JSON.stringify(avo, null, 3)}</p>
-        ))}
       </section>
     </Layout>
   )

@@ -1,6 +1,6 @@
 import styles from './prod.module.css'
 import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Icon, Image, Rating, Label } from 'semantic-ui-react'
 import Link from 'next/link'
 
 interface Props {
@@ -12,17 +12,22 @@ const CardProduct = (props: Props) => {
   const { id, name, image, price, sku } = product
   console.log(product)
 
+  // <Link key={id} href="/product/[id]" as={`/product/${id}`} passHref>
   return (
-    <Link href={`/product/${id}`}>
-      <a className={styles.anchor}>
-        <Card>
-          <Image src={image} wrapped ui={false} />
-          <Card.Content>
-            <Card.Header>{name}</Card.Header>
-            <Card.Description>${price}</Card.Description>
-          </Card.Content>
-        </Card>
-      </a>
+    <Link key={id} href={`/product/[id]`} as={`/product/${id}`} passHref>
+      <Card as="a">
+        <Image src={image} wrapped ui={false} />
+        <Card.Content>
+          <Card.Header>{name}</Card.Header>
+          <Card.Description>
+            <Label.Group tag>
+              <Label color="teal">${price}</Label>
+            </Label.Group>
+          </Card.Description>
+          <Rating icon="star" defaultRating={3} maxRating={4} />
+          <br />
+        </Card.Content>
+      </Card>
     </Link>
   )
 }

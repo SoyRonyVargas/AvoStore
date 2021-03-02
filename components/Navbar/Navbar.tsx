@@ -1,26 +1,8 @@
-// import React from 'react'
-// import Link from 'next/link'
-
-// export default function Navbar() {
-//   return (
-//     <nav>
-//       <>
-//         <Link href="/">
-//           <a>Home</a>
-//         </Link>
-//         <Link href="/about">
-//           <a>About</a>
-//         </Link>
-//       </>
-//     </nav>
-//   )
-// }
-
 import React, { useContext } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Menu, Container } from 'semantic-ui-react'
-
+// import Avo from '../../public/images/avocado.svg'
 // import { Avocado } from '@components/SVGIcons'
 // import ShoppingCartIcon from './ShoppingCartIcon'
 // import { useCart } from '@store/Cart'
@@ -38,6 +20,7 @@ const Navbar = () => {
             title="Inicio | Todos los productos"
           >
             {/* <Avocado /> */}
+            <img src="/images/avocado.svg" alt="XD" />
             Avo Store
           </Menu.Item>
         </Link>
