@@ -1,3 +1,4 @@
+import 'semantic-ui-css/semantic.min.css'
 import { AppProps } from 'next/app'
 import Layout from '@components/Layout'
 

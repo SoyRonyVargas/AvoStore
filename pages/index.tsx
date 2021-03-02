@@ -19,7 +19,7 @@ const HomePage = () => {
     <div>
       <div>Platzi and Next.js!</div>
       {avos.map((avo) => (
-        <pre>{JSON.stringify(avo, null, 3)}</pre>
+        <p>{JSON.stringify(avo, null, 3)}</p>
       ))}
     </div>
   )
