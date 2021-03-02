@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../components/Navbar/Navbar'
+import Layout from '@components/Layout'
+import { Header } from 'semantic-ui-react'
+import ListOfProducts from '@components/ListProducts/index'
 
 const HomePage = () => {
   const [avos, setAvos] = useState<TProduct[]>([])
@@ -16,12 +18,16 @@ const HomePage = () => {
   }, [])
 
   return (
-    <div>
-      <div>Platzi and Next.js!</div>
-      {avos.map((avo) => (
-        <pre>{JSON.stringify(avo, null, 3)}</pre>
-      ))}
-    </div>
+    <Layout>
+      <section style={{ margin: '2rem 0' }}>
+        <Header textAlign="center" size="huge" as="h1">
+          Store
+          <img src="/images/avocado.svg" alt="XD" />
+          Avo!
+        </Header>
+        <ListOfProducts allproducts={avos} />
+      </section>
+    </Layout>
   )
 }
 

@@ -6,18 +6,19 @@ import { Container } from 'semantic-ui-react'
 const Layout: React.FunctionComponent = ({ children }) => {
   return (
     // <div className={style.container}>
-    <Container text className="container">
+    <>
       <Navbar />
-      {children}
-      <footer>footer xd</footer>
-      <style jsx>
-        {`
-          .container {
-            background: red;
-          }
-        `}
-      </style>
-    </Container>
+      <Container text>
+        <main>{children}</main>
+        <style jsx>
+          {`
+            .container {
+              background: red;
+            }
+          `}
+        </style>
+      </Container>
+    </>
   )
 }
 

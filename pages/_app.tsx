@@ -1,13 +1,14 @@
 import 'semantic-ui-css/semantic.min.css'
 import { AppProps } from 'next/app'
 import Layout from '@components/Layout'
+import '../global.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
+    <>
       {/* <Layout/> */}
       <Component {...pageProps} />
-    </Layout>
+    </>
   )
 }
 

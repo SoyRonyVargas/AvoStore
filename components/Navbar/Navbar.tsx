@@ -1,17 +1,44 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { Menu, Container } from 'semantic-ui-react'
+import ShoppingCartIcon from './ShoppingCardIcon'
+// import Avo from '../../public/images/avocado.svg'
+// import { Avocado } from '@components/SVGIcons'
+// import { useCart } from '@store/Cart'
 
-export default function Navbar() {
+const Navbar = () => {
+  const { pathname } = useRouter()
+  // const { count: cartCount } = useCart()
+
   return (
-    <nav>
-      <menu>
-        <Link href="/">
-          <a>Home</a>
+    <Menu size="huge" borderless pointing as="header">
+      <Container text>
+        <Link href="/" passHref>
+          <Menu.Item
+            active={pathname === '/'}
+            title="Inicio | Todos los productos"
+          >
+            {/* <Avocado /> */}
+            <img src="/images/avocado.svg" alt="XD" />
+            Avo Store
+          </Menu.Item>
         </Link>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </menu>
-    </nav>
+        <Menu.Menu position="right">
+          <Link href="/cart" passHref>
+            <Menu.Item active={pathname === '/cart'}>
+              <ShoppingCartIcon />
+            </Menu.Item>
+          </Link>
+        </Menu.Menu>
+      </Container>
+      <style jsx global>{`
+        .ui.menu.huge {
+          font-size: 1.5rem;
+        }
+      `}</style>
+    </Menu>
   )
 }
+
+export default Navbar
