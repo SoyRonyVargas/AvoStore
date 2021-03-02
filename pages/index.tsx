@@ -21,7 +21,9 @@ const HomePage = () => {
     <Layout>
       <section style={{ margin: '2rem 0' }}>
         <Header textAlign="center" size="huge" as="h1">
-          StoreAvo!
+          Store
+          <img src="/images/avocado.svg" alt="XD" />
+          Avo!
         </Header>
         <ListOfProducts allproducts={avos} />
       </section>

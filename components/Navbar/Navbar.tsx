@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Menu, Container } from 'semantic-ui-react'
+import ShoppingCartIcon from './ShoppingCardIcon'
 // import Avo from '../../public/images/avocado.svg'
 // import { Avocado } from '@components/SVGIcons'
-// import ShoppingCartIcon from './ShoppingCartIcon'
 // import { useCart } from '@store/Cart'
 
 const Navbar = () => {
@@ -27,7 +27,7 @@ const Navbar = () => {
         <Menu.Menu position="right">
           <Link href="/cart" passHref>
             <Menu.Item active={pathname === '/cart'}>
-              {/* <ShoppingCartIcon cartCount={cartCount} name="Canasta" /> */}
+              <ShoppingCartIcon />
             </Menu.Item>
           </Link>
         </Menu.Menu>
