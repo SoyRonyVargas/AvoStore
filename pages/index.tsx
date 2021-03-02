@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '@components/Layout'
 import { Header } from 'semantic-ui-react'
-import { Container } from 'next/app'
+import ListOfProducts from '@components/ListProducts/index'
 
 const HomePage = () => {
   const [avos, setAvos] = useState<TProduct[]>([])
@@ -23,6 +23,9 @@ const HomePage = () => {
         <Header textAlign="center" size="huge" as="h1">
           StoreAvo!
         </Header>
+
+        <ListOfProducts allproducts={avos} />
+
         {avos.map((avo) => (
           <p>{JSON.stringify(avo, null, 3)}</p>
         ))}

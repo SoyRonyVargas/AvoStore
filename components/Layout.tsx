@@ -9,7 +9,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
     <>
       <Navbar />
       <Container text>
-        {children}
+        <main>{children}</main>
         <style jsx>
           {`
             .container {
